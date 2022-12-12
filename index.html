@@ -9,59 +9,90 @@
         <link rel="stylesheet" href="./style.css">
     </head>
     <body>
-        <div class="game-container">
-            <header>
-                <h1>Number Guesser!</h1>
-            </header>
-            
-            <div class="rounds">
-                <p class="round-label">Round <span id="round-number">1</span></p>
-                <p class="guess-label">Target Number: <span id="target-number">?</span></p>
-            </div>
-    
-            <div class="guessing-area">
-                <div class="guess computer-guess">
-                    <div class="guess-title">
-                        <p class="guess-label">Computer</p>
-                        <p class="score-label">Score: <span id="computer-score">0</span></p>
-                    </div>
-                    <p id="computer-guess">?</p>
-                    <p class="winning-text" id="computer-wins"></p>
+        <!-- Inner Flexible Container -->
+        <div class="innerflex">
+            <!-- Instructions -->
+            <div class="instructions">
+                <div>
+                    <h2>How To Play!</h2>
                 </div>
-                <div class="guess human-guess">
-                    <div class="guess-title">
-                        <p class="guess-label">You</p>
-                        <p class="score-label">Score: <span id="human-score">0</span></p>   
-                    </div>
-                    <input type="number" id="human-guess" min=0 max=9 value=0>
-                    <div class="number-controls">
-                        <button class="number-control left" id="subtract" disabled>-</button>
-                        <button class="number-control right" id="add">+</button>
-                    </div>
-                    <button class="button" id="guess">Make a Guess</button>
+                <div class="instruction">
+                    <h3>Step 1</h3>
+                    <p>Input a number between 0 and 9</p>
+                </div>
+                <div class="instruction">
+                    <h3>Step 2</h3>
+                    <p>Click "Make a Guess" to submit your guess and see who won the round.</p>
+                </div>
+                <div class="instruction">
+                    <h3>Step 3</h3>
+                    <p>Click "Next Round" to play again.</p>
                 </div>
             </div>
-    
-            <div class="next-round-container">
-                <button class="button" id="next-round" disabled>Next Round</button>
+
+            <!-- Game Container -->
+            <div class="game-container">
+                <div>
+                    <h2>Number Guesser!</h2>
+                </div>
+
+                <!-- Instructions Accordion (Mobile) -->
+                <div>
+                    <button class="instructions-btn"><h2>How To Play!</h2></button>
+                    <div class="panel">
+                        <div class="inner-panel">
+                            <div class="steps">
+                                <h3>Step 1</h3>
+                                <p>Input a number between 0 and 9</p>
+                            </div>
+                            <div class="steps">
+                                <h3>Step 2</h3>
+                                <p>Click "Make a Guess" to submit your guess and see who won the round.</p>
+                            </div>
+                            <div class="steps">
+                                <h3>Step 3</h3>
+                                <p>Click "Next Round" to play again.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Rounds -->
+                <div class="rounds">
+                    <p class="round-label">Round <span id="round-number">1</span></p>
+                    <p class="guess-label">Target Number: <span id="target-number">?</span></p>
+                </div>
+                
+                <!-- Guessing Area -->
+                <div class="guessing-area">
+                    <div class="guess computer-guess">
+                        <div class="guess-title">
+                            <p class="guess-label">Computer</p>
+                            <p class="score-label">Score: <span id="computer-score">0</span></p>
+                        </div>
+                        <p id="computer-guess">?</p>
+                        <p class="winning-text" id="computer-wins"></p>
+                    </div>
+                    <div class="guess human-guess">
+                        <div class="guess-title">
+                            <p class="guess-label">You</p>
+                            <p class="score-label">Score: <span id="human-score">0</span></p>   
+                        </div>
+                        <input type="number" id="human-guess" min=0 max=9 value=0>
+                        <div class="number-controls">
+                            <button class="number-control left" id="subtract" disabled>-</button>
+                            <button class="number-control right" id="add">+</button>
+                        </div>
+                        <button class="button" id="guess">Make a Guess</button>
+                    </div>
+                </div>
+                
+                <!-- Next Round -->
+                <div class="next-round-container">
+                    <button class="button" id="next-round" disabled>Next Round</button>
+                </div>
             </div>
         </div>
-        
-        <div class="instructions">
-            <div class="instruction">
-                <h3>Step 1</h3>
-                <p>Input a number between 0 and 9</p>
-            </div>
-            <div class="instruction">
-                <h3>Step 2</h3>
-                <p>Click "Make a Guess" to submit your guess and see who won the round.</p>
-            </div>
-            <div class="instruction">
-                <h3>Step 3</h3>
-                <p>Click "Next Round" to play again.</p>
-            </div>
-        </div>
-    
         <script src="./script.js"></script>
         <script src="./game.js"></script>
     </body>
