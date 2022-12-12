@@ -15,11 +15,6 @@
     text-align: center;
   }
   
-  header {
-    display: flex;
-    justify-content: center
-  }
-  
   .rounds {
     display: flex;
     flex-direction: column;
@@ -44,9 +39,22 @@
   
   .guessing-area {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: flex-start;
     margin-bottom: 60px;
+  }
+
+  @media only screen and (max-width: 861px) {
+    .guessing-area {
+      max-width: 305px;
+      margin: 10px;
+    }
+
+    .guess {
+      flex-grow: 2;
+      flex-shrink: 2;
+    }
   }
   
   .guess-title {
@@ -175,20 +183,87 @@
     background-color: #ececec;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    max-width: 250px;
+    min-width: 220px;
+    align-items: center;
+    flex-direction: column;
   }
   
   .instruction {
     width: 180px;
-    padding: 2px;
+    padding: 10px 2px;
     text-align: center;
+    font-size: 1.1em;
   }
   
   .instructions h3 {
     font-size: 14px;
+    color: #ec3636;
   }
+
+  /* Instructions Accordion */
+  .instructions-btn {
+    background-color: #000;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: 0.4s;
+  }
+
+  .instructions-btn h2 {
+    color: #fff;
+  }
+
+  .panel {
+    background-color: #ececec;
+    width: 100%;
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+  }
+  
+  #steps {
+    padding: 2px;
+    text-align: center;
+  }
+
+  .panel h3 {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .instructions-btn:after {
+    color: yellow;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+    margin-top: -40px;
+  }
+  
+  .active:after {
+    content: "Close";
+  }
+
+  /* Instructions Responsive */
+  @media only screen and (min-width: 601px) {
+    .instructions-btn {
+      display: none;
+    }
+ }
+
+ @media only screen and (max-width: 600px) {
+  .instructions {
+    display: none;
+  }
+}
   
   .winning-text, .winning-text[disabled] {
     color: #ec3636;
     font-weight: 700;
+  }
+
+  /* Inner Flexible Container */
+  .innerflex {
+    display: flex;
   }
